@@ -3,17 +3,16 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState={
     cart:false
 }
-export const cartSlice=createSlice({
-    name:"cart",
+ const CartSlice=createSlice({
+    name:"ui",
     initialState,
     reducers:{
-        carttrue(state){
-            state.cart=true
-
+        cartshow(state){
+            console.log(state.cart)
+            state.cart=!state.cart;
         },
-        cartfalse(state){
-            state.cart=false
-        }
+       
     }
 })
-export const cartaction=cartSlice.actions
+export const cartaction=CartSlice.actions
+export default CartSlice;

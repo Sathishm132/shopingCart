@@ -1,18 +1,14 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch,} from 'react-redux';
 import { cartaction } from '../../Store/CartSlice';
 import classes from './CartButton.module.css';
 
 const CartButton = (props) => {
   const dispatch=useDispatch();
-  const cart=useSelector(state=>state.cart)
+
   const clickhandler=()=>{
-    if(cart){
-      dispatch(cartaction.cartfalse())
-    }else{
-      dispatch(cartaction.carttrue())
-    }
    
-    
+      dispatch(cartaction.cartshow());
+
   }
   return (
     <button className={classes.button} onClick={clickhandler}>
