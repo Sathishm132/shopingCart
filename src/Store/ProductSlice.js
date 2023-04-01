@@ -13,6 +13,10 @@ const intitialCart={cartitems:[],totalquantity:0,}
             state.cartitems=action.payload
             state.totalquantity--
          
+        },
+        replace(state,action){
+            state.cartitems=action.payload
+
         }
 
     }
