@@ -20,9 +20,9 @@ const DummyProduct=[
 
 
 const Products = (props) => {
-  const products=DummyProduct.map((product)=>(<ul>
+  const products=DummyProduct.map((product)=>(<ul   key={product.id}>  
     <ProductItem
-      key={product.id}
+    
       title={product.title}
       price={product.price}
       description={product.description}

@@ -1,20 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const intitialCart={cartitems:[]}
+const intitialCart={cartitems:[],totalquantity:0,}
  const ProductSlice=createSlice({
     name:"products",
     initialState:intitialCart,
     reducers:{
         addtocart(state,action){
-          
-            const newitem=action.payload;
-            const existingitem=state.cartitems.find(item=>item.title===newitem.title)
-            if(!existingitem){
-                state.cartitems.push({...newitem,quantity:1})
-            } else{
-               existingitem.quantity++
-            }
+            state.totalquantity++
+            state.cartitems=action.payload
+        },
+        removecart(state,action){
+            state.cartitems=action.payload
+            state.totalquantity--
+         
         }
+
     }
 })
 

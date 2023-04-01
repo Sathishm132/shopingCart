@@ -1,16 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState={
-    cart:false
+    cart:false,
+    notification:null
+
 }
  const CartSlice=createSlice({
     name:"ui",
     initialState,
     reducers:{
         cartshow(state){
-            console.log(state.cart)
+           
             state.cart=!state.cart;
         },
+        shownotify(state,action){
+            state.notification=action.payload
+
+        }
        
     }
 })

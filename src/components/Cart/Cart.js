@@ -6,7 +6,7 @@ import CartItem from './CartItem';
 const Cart = (props) => {
   
   const cartitems=useSelector(state=>state.cart.cartitems)
-  const Cart=cartitems.map(item=>(<CartItem item={{title:item.title,quantity:item.quantity,price:item.price}}></CartItem>))
+  const Cart=cartitems.map(item=>(<CartItem key={item.id} item={{id:item.id,title:item.title,quantity:item.quantity,price:item.price, total:item.totalprice}}></CartItem>))
   return (
     <Card className={classes.cart}>
       <h2>Your Shopping Cart</h2>
